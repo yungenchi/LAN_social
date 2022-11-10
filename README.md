@@ -1,25 +1,40 @@
------------ Acknowledgment -----------
-- This project is using the week 8 lab practice code of RMIT - Further Web Programming COSC2758 as starting code
+# Project name
+LAN (Loop Agile Now)
 
------------ User Port -----------
-- Backend: (in User_BackEnd folder)
-    1. $ npm install 
-    2. $ node server.js
+# Project description
+This is a in-company communicate social media application.
 
-- FrontEnd: (in User_FrontEnd folder)
-    1. $ npm install 
-    2. $ npm start.js
+## Team details
+- Yung-En Chi (https://github.com/s3864916)
+- Zico Zhong (https://github.com/ZhihaoZhong-s3756809)
 
------------ Admin Port -----------
-- Backend: (in Admin_Backend folder)
-    1. $ npm install 
-    2. $ node server.js
+## Project Structure
+The project has User-end and Admin-end, both runs in different FrontEnd & BackEnd of directory.
+- User
+    - FrontEnd: User_FrontEnd
+    - BackEnd: User_BackEnd
+- Admin
+    - FrontEnd: Admin_FrontEnd
+    - BackEnd: Admin_BackEnd
 
-- FrontEnd: (in Admin_FrontEnd folder)
-1. $ npm install 
-2. $ npm start.js
+For user part, using functional react as front-end, connecting to backend using REST; for the back-end using sqlize with sql database fetch with REST.
+For admin part, using functional react as front-end, connecting to backend using GraphQL; for the back-end using sqlize with sql database fetch with GraphQL.
 
------------ Testing  -----------
-- Note. The test is only on user end, and using actual database for test. There are two account are used for testing, so do not change the following two account in database in any way:  account username: user, zico000 
-1. (in User_BackEnd folder):   $ node server.js
-2. (in User_FrontEnd folder):   $ npm test
+## Project Configure & run
+- For configure & run front end (both user & admin) go to the according FrontEnd directory, then:
+> npm install
+> node start
+
+- For configure & run back end (both user & admin) go to the according BackEnd directory, then:
+> npm install
+> node server.js
+
+## External Package Used
+- **bootstrap**
+  - install: npm install bootstrap
+  - version: _^5.2.2_
+  - description: For building user interface.
+ 
+## References
+- This is originally the assignment for RMIT - Full Stack Development COSC2758.
+- The code was using week8 tutorial code as starting code (https://rmit.instructure.com/courses/90493/files/27052011?wrap=1)
