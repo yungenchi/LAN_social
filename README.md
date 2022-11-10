@@ -22,12 +22,12 @@ For admin part, using functional react as front-end, connecting to backend using
 
 ## Project Configure & run
 - For configure & run front end (both user & admin) go to the according FrontEnd directory, then:
-> npm install
-> node start
+1. > npm install
+2. > node start
 
 - For configure & run back end (both user & admin) go to the according BackEnd directory, then:
-> npm install
-> node server.js
+1. > npm install
+2. > node server.js
 
 ## External Package Used
 - **bootstrap**
