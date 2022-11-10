@@ -1,0 +1,110 @@
+.profile {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.user-meta {
+  float: left;
+}
+
+p,
+ul {
+  margin: 0;
+}
+
+.firstname,
+.lastname {
+  font-weight: 600;
+}
+
+.handle,
+.time {
+  color: #657786;
+}
+
+.handle::after {
+  content: " \00b7";
+}
+
+.content {
+  flex: 1;
+}
+
+.user-photo {
+  float: left;
+  margin-right: 10px;
+  width: 48px;
+  border-radius: 50%;
+}
+
+.reaction-img {
+  margin-right: 5px;
+  float: left;
+  width: 15px;
+  height: 15px;
+}
+
+.reaction-group {  
+  /* padding-top: 8px; */
+  display: flex;
+  color: rgb(51, 51, 51);
+  padding-right: 10px;
+}
+.reaction-section {
+  display: flex;
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.actions {
+  display: flex;
+  padding: 0;
+  float: right;
+}
+
+.actions li {
+  list-style: none;
+  margin-right: 30px;
+}
+
+.actions button {
+  border: none;
+  color: #657786;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  color: #1da1f2;
+}
+
+.joinedDate {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #657786;
+  float:right;
+  padding-right: 20px;
+}
+
+article {
+  background-color: aliceblue;
+}
+
+.user-photo {
+  border: 1px solid rgb(65, 65, 65);
+  width: 80;
+  height: 80;
+}
+
+
+.photo-upload {
+  border: 1px solid rgb(65, 65, 65);
+  width: 80;
+  height: 80;
+}
