@@ -6,8 +6,10 @@ import officePic from "../data/imgs/office.jpg"
 export default function Home() {
     return (
       <div className="row">
-        <img className="col col-sm-7" style={{padding:0}} src={officePic}/>
-        <TextArea/> 
+        <img className="img-fluid col col-sm-6 p-0 m-0 d-none d-lg-block" src={officePic}/>
+        <div className="col p-5">
+          <TextArea/> 
+        </div>
       </ div>
     );
   }
@@ -16,10 +18,12 @@ export default function Home() {
 function TextArea(){
     const { user } = useContext(UserContext);
     return (
-      <div className="text-center col col-sm-5"  style={{padding:30}}>
-      <h1 className="display-4"><b><i>Loop Agile Now (LAN)</i></b></h1>
-      {user !== null && <h4><strong>Hello {user.first_name}! Welcome to LAN</strong></h4>}
-      <p>
+      <div className="text-left">
+      <h1 className="font-weight-bold display-5">Loop Agile Now (LAN)</h1>
+      {user !== null && <h4 className="font-weight-regular" >Hello {user.firstname}! &nbsp;&nbsp; Welcome to LAN </h4>}
+      
+      <p className="text-break font-monospace font-weight-light">
+      <br/>
       COVID-19 pandemic has made a massive impact on our lives. Many of us are still reeling through emotional aftermath 
       of the earlier lockdowns, ongoing challenges posed by the pandemic and fear of getting sick. While the public health 
       actions, such as social distancing, are necessary to reduce the spread of COVID-19, they can make us feel isolated and 

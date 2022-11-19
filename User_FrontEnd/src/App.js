@@ -27,11 +27,11 @@ export default function App() {
   }
 
   return (
-    <div className="d-flex flex-column min-vh-100" style={{backgroundColor: "#c9c9c9"}}>
+    <div className="d-flex flex-column min-vh-100">
       <UserContext.Provider value={{ user, loginUser, logoutUser, updateUserData}}>
         <Router>
           <Navbar user={user} logoutUser={logoutUser} />
-          <main role="main">
+          <main role="main" className="main-light">
             <div className="container-fluid">
               <Routes>
                 <Route path="/" element={<Home/>} />

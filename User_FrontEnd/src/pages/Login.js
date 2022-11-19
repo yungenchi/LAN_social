@@ -2,6 +2,8 @@ import React, { useState , useContext} from "react";
 import UserContext from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { verifyUser, createOrUpdateStatsRecord } from "../data/repository";
+import officePic from "../data/imgs/office.jpg"
+
 
 export default function Login() {
   const navigate = useNavigate();
@@ -47,31 +49,34 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <hr />
-      <div className="row">
-        <div className="col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="username" className="control-label">Username</label>
-              <input name="username" id="username" className="form-control"
-                value={fields.username} onChange={handleInputChange} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password" className="control-label">Password</label>
-              <input type="password" name="password" id="password" className="form-control"
-                value={fields.password} onChange={handleInputChange} />
-            </div>
-            <div className="form-group">
-              <input type="submit" className="btn btn-primary" value="Login" />
-            </div>
-            {errorMessage !== null &&
+    <div className="row">
+      <img className="img-fluid  col col-lg-6 p-0 m-0 d-none d-lg-block" src={officePic}/>
+      <div className="col col-md-4 m-5">
+        <h1>Login</h1>
+        <hr />
+        <div className="row">
+          <div className="col-sm-12">
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <span className="text-danger" role={"alert"}>{errorMessage}</span>
+                <label htmlFor="username" className="control-label">Username</label>
+                <input name="username" id="username" className="form-control"
+                  value={fields.username} onChange={handleInputChange} />
               </div>
-            }
-          </form>
+              <div className="form-group">
+                <label htmlFor="password" className="control-label">Password</label>
+                <input type="password" name="password" id="password" className="form-control"
+                  value={fields.password} onChange={handleInputChange} />
+              </div>
+              <div className="form-group">
+                <input type="submit" className="btn btn-primary" value="Login" />
+              </div>
+              {errorMessage !== null &&
+                <div className="form-group">
+                  <span className="text-danger" role={"alert"}>{errorMessage}</span>
+                </div>
+              }
+            </form>
+          </div>
         </div>
       </div>
     </div>

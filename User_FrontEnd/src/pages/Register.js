@@ -3,6 +3,7 @@ import UserContext from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { findUser, createUser, createOrUpdateStatsRecord, passwordValid } from "../data/repository";
+import officePic from "../data/imgs/office.jpg"
 
 export default function Register() {
   const navigate = useNavigate();
@@ -95,59 +96,62 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <hr />
-      <div className="row">
-        <div className="col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="username" className="control-label">Username</label>
-              <input name="username" id="username" className="form-control"
-                value={fields.username} onChange={handleInputChange} />
-              {errors.username &&
-                <div className="text-danger">{errors.username}</div>
-              }
-            </div>
-            <div className="form-group">
-              <label htmlFor="firstname" className="control-label">First name</label>
-              <input name="firstname" id="firstname" className="form-control"
-                value={fields.firstname} onChange={handleInputChange} />
-              {errors.firstname &&
-                <div className="text-danger">{errors.firstname}</div>
-              }
-            </div>
-            <div className="form-group">
-              <label htmlFor="lastname" className="control-label">Last name</label>
-              <input name="lastname" id="lastname" className="form-control"
-                value={fields.lastname} onChange={handleInputChange} />
-              {errors.lastname &&
-                <div className="text-danger">{errors.lastname}</div>
-              }
-            </div>
-            <div className="form-group">
-              <label htmlFor="password" className="control-label">
-                Password <small className="text-muted">require "strong password"</small>
-              </label>
-              <input type="password" name="password" id="password" className="form-control"
-                value={fields.password} onChange={handleInputChange} />
-              {errors.password &&
-                <div className="text-danger">{errors.password}</div>
-              }
-            </div>
-            <div className="form-group">
-              <label htmlFor="confirmPassword" className="control-label">Confirm password</label>
-              <input type="password" name="confirmPassword" id="confirmPassword" className="form-control"
-                value={fields.confirmPassword} onChange={handleInputChange} />
-              {errors.confirmPassword &&
-                <div className="text-danger">{errors.confirmPassword}</div>
-              }
-            </div>
-            <div className="form-group">
-              <input type="submit" className="btn btn-primary mr-5" value="Register" />
-              <Link className="btn btn-outline-dark" to="/">Cancel</Link>
-            </div>
-          </form>
+    <div className="row">
+      <img className="col col-md-6 p-0 m-0 d-none d-lg-block" src={officePic}/>
+      <div  className="col col-md-4 m-5">
+        <h1>Register</h1>
+        <hr />
+        <div className="row">
+          <div className="col-sm-12">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="username" className="control-label">Username</label>
+                <input name="username" id="username" className="form-control"
+                  value={fields.username} onChange={handleInputChange} />
+                {errors.username &&
+                  <div className="text-danger">{errors.username}</div>
+                }
+              </div>
+              <div className="form-group">
+                <label htmlFor="firstname" className="control-label">First name</label>
+                <input name="firstname" id="firstname" className="form-control"
+                  value={fields.firstname} onChange={handleInputChange} />
+                {errors.firstname &&
+                  <div className="text-danger">{errors.firstname}</div>
+                }
+              </div>
+              <div className="form-group">
+                <label htmlFor="lastname" className="control-label">Last name</label>
+                <input name="lastname" id="lastname" className="form-control"
+                  value={fields.lastname} onChange={handleInputChange} />
+                {errors.lastname &&
+                  <div className="text-danger">{errors.lastname}</div>
+                }
+              </div>
+              <div className="form-group">
+                <label htmlFor="password" className="control-label">
+                  Password <small className="text-muted">require "strong password"</small>
+                </label>
+                <input type="password" name="password" id="password" className="form-control"
+                  value={fields.password} onChange={handleInputChange} />
+                {errors.password &&
+                  <div className="text-danger">{errors.password}</div>
+                }
+              </div>
+              <div className="form-group">
+                <label htmlFor="confirmPassword" className="control-label">Confirm password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" className="form-control"
+                  value={fields.confirmPassword} onChange={handleInputChange} />
+                {errors.confirmPassword &&
+                  <div className="text-danger">{errors.confirmPassword}</div>
+                }
+              </div>
+              <div className="form-group my-4">
+                <input type="submit" className="btn btn-primary mr-5" value="Register" />
+                <Link className="btn btn-outline-dark" to="/">Cancel</Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
