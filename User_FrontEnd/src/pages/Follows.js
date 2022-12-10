@@ -73,20 +73,25 @@ export default function Follows(){
 
     return(
         <>
-            <div className="input-group m-3 mx-auto row justify-content-md-center">
-                <input className="col col-6 form-control align-items-center mr-3" type='text' id='userSearch' placeholder="Enter username for search" value={searchText} onChange={handleSearchChange}/>
-                <ul>
-                    {showUsers.length > 0 ? 
-                        (showUsers.map((user) => (
-                            <li>
-                                <button className="my-1 btn"
-                                    {...followingList.includes(user.username) ? 
-                                    "my-1 btn btn-outline-danger" : "my-1 btn btn-outline-primary"}> 
-                                    {user.username} 
-                                </button>
-                            </li>
-                        ))) : <></>}
-                </ul>
+            <div className="m-3 mx-auto container justify-content-md-center">
+                <input className="row form-control align-items-center mr-3" 
+                type='text' id='userSearch' placeholder="Enter username for search" 
+                value={searchText} onChange={handleSearchChange}
+                />
+                <div className="row">
+                    <ul className="list-group">
+                        {showUsers.length > 0 ? 
+                            (showUsers.map((user) => (
+                                <li className="list-group-item">
+                                    <button className =
+                                        {followingList.includes(user.username)? 
+                                        "list-group-item-action my-1 btn btn-outline-danger" : "list-group-item-action my-1 btn btn-outline-primary"}> 
+                                        {user.username} 
+                                    </button>
+                                </li>
+                            ))) : <></>}
+                    </ul>
+                </div>
             </div>
         </>
     )
