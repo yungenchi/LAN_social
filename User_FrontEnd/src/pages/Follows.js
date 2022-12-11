@@ -73,13 +73,15 @@ export default function Follows(){
 
     return(
         <>
-            <div className="m-3 mx-auto container justify-content-md-center">
-                <input className="row form-control align-items-center mr-3" 
-                type='text' id='userSearch' placeholder="Enter username for search" 
-                value={searchText} onChange={handleSearchChange}
-                />
-                <div className="row">
-                    <ul className="list-group">
+            <div className="mt-3 container">
+                <div className="row justify-content-center">
+                    <input className="col col-6 form-control" 
+                    type='text' id='userSearch' placeholder="Enter username for search" 
+                    value={searchText} onChange={handleSearchChange}
+                    />
+                </div>
+                <div className="row justify-content-center">
+                    <ul className="col col-6 list-group center px-1" style={{maxHeight: "200px", overflow:"scroll"}}>
                         {showUsers.length > 0 ? 
                             (showUsers.map((user) => (
                                 <li className="list-group-item">
