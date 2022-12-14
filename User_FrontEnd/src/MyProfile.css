@@ -108,3 +108,11 @@ article {
   width: 80;
   height: 80;
 }
+
+
+.searchBar {
+  max-height: 250px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-appearance: searchfield-cancel-button;
+}
