@@ -67,18 +67,7 @@ export default function Follows(){
 
     useEffect(()=>{
         loadShowUsers();
-        console.log(document.activeElement);
     }, [searchText])
-
-    // useEffect(() => {
-    //     if (document.activeElement === searchRef.current) {
-    //       console.log('element has focus');
-    //       setSearching(true)
-    //     } else {
-    //       console.log('element does NOT have focus');
-    //       setSearching(false)
-    //     }
-    //   }, [document.activeElement]);
 
 
 // ---------- handle input ----------
@@ -87,32 +76,39 @@ export default function Follows(){
         setSearchText(event.target.value)
     }
 
+    const handleShowResult = (event) => {
+    //    if(event.type == "blur"){
+    //     console.log("blur");
+    //    }else if(event.type == "focus"){
+    //     console.log("focus");
+    //    }
+    }
+
 
     return(
         <>
-            <div className="mt-3 container">
-                <div className="row justify-content-center">
-                    <input onFocus={() =>{setSearching(true)}} onBlur={() =>{setSearching(false)}}  className="col col-6 form-control" 
+            <div className="mt-3 row d-flex justify-content-center">
+                <div className="col col-md-6">
+                    <input onFocus={handleShowResult} onBlur={handleShowResult}  className="mx-0 row form-control" 
                     type='text' id='userSearch' placeholder="Enter username for search" 
                     value={searchText} onChange={handleSearchChange}
                     />
-                </div>
-                <div className="row justify-content-center">
-                    <ul className="searchBar col col-6 list-group center px-1" hidden={!searching}>
+                    <ul className="searchBar col list-group px-1" hidden={false}>
                         {showUsers.length > 0 ? 
                             (showUsers.map((user) => (
-                                <li key={user.username} className="list-group-item">
+                                <li key={user.username} className="py-2 px-3 list-group-item d-flex justify-content-between">
+                                    <div class="ms-2 me-auto">
+                                        <div class="text-dark fw-bold">{user.username}</div>
+                                        <div class="text-secondary fw-bold">{user.firstname} {user.lastname}</div>
+                                    </div>
                                     <button className =
                                         {followingList.includes(user.username)? 
-                                        "list-group-item-action my-1 btn btn-outline-danger" : "list-group-item-action my-1 btn btn-outline-primary"}> 
-                                        {user.username} 
+                                        "btn btn-danger" : "btn btn-primary"}> 
+                                        {followingList.includes(user.username)? "Unfollow": "Follow"} 
                                     </button>
                                 </li>
                             ))) : <></>}
                     </ul>
-                </div>
-                <div className="row justify-content-center">
-                    <input/>
                 </div>
             </div>
         </>
