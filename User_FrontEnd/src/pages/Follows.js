@@ -8,9 +8,8 @@ import "../MyProfile.css";
 
 export default function Follows(){
     const { user } = useContext(UserContext);
-    const username = user.username
     const [searching , setSearching] = useState(false)
-    // const searchRef = useRef(null);
+
 
     const [userList, setUserList] = useState([]);
     const [followingList, setFollowingList] = useState([]);
@@ -69,31 +68,37 @@ export default function Follows(){
         loadShowUsers();
     }, [searchText])
 
-
-// ---------- handle input ----------
+// ---------- handle ----------
 
     const handleSearchChange = (event) => {
         setSearchText(event.target.value)
     }
-
-    const handleShowResult = (event) => {
-    //    if(event.type == "blur"){
-    //     console.log("blur");
-    //    }else if(event.type == "focus"){
-    //     console.log("focus");
-    //    }
+    const handleFollow = async (event) => {
+        event.preventDefault();
+        console.log(event);
+        const username = event.target.id
+        const followed = followingList.includes(username)
+        if (!followed) {
+            await follow({"username": username, "followedBy":user.username})
+            console.log("follow");
+            loadFollowings();
+        }else{
+            await unFollow({"username": username, "followedBy":user.username})
+            console.log("unfollow");
+            loadFollowings();
+        }
     }
 
 
     return(
         <>
             <div className="mt-3 row d-flex justify-content-center">
-                <div className="col col-md-6">
-                    <input onFocus={handleShowResult} onBlur={handleShowResult}  className="mx-0 row form-control" 
+                <div className="col col-md-6"  onFocus={()=>{setSearching(true)}} onBlur={()=>{setSearching(true)}} >
+                    <input className="mx-0 row form-control"
                     type='text' id='userSearch' placeholder="Enter username for search" 
                     value={searchText} onChange={handleSearchChange}
                     />
-                    <ul className="searchBar col list-group px-1" hidden={false}>
+                    <ul className="searchBar col list-group px-1" hidden={!searching}>
                         {showUsers.length > 0 ? 
                             (showUsers.map((user) => (
                                 <li key={user.username} className="py-2 px-3 list-group-item d-flex justify-content-between">
@@ -101,9 +106,8 @@ export default function Follows(){
                                         <div class="text-dark fw-bold">{user.username}</div>
                                         <div class="text-secondary fw-bold">{user.firstname} {user.lastname}</div>
                                     </div>
-                                    <button className =
-                                        {followingList.includes(user.username)? 
-                                        "btn btn-danger" : "btn btn-primary"}> 
+                                    <button id={user.username} className={followingList.includes(user.username)? "btn btn-danger" : "btn btn-primary"}
+                                    onClick={handleFollow} > 
                                         {followingList.includes(user.username)? "Unfollow": "Follow"} 
                                     </button>
                                 </li>
