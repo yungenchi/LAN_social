@@ -79,8 +79,14 @@ async function editPost(post) {
 }
 
 // --- Follow ---------------------------------------------------------------------------------------
-async function checkFollow(obj) {
+async function checkFollowings(obj) {
   const response = await axios.get(API_HOST + `/api/follows/followingsof/${obj.username}`);
+
+  return response.data;
+}
+
+async function checkFollowers(obj) {
+  const response = await axios.get(API_HOST + `/api/follows/followersof/${obj.username}`);
 
   return response.data;
 }
@@ -168,7 +174,7 @@ function passwordValid(password) {
 export {
   verifyUser, findUser, createUser, deleteUser, updateUser, changePasswordUser,
   getRootPosts, createPost, getRootPostsOfUser, getReplyPosts, deletePost, editPost,
-  checkFollow, follow, unFollow,
+  checkFollowings , checkFollowers, follow, unFollow,
   getAllReactions, getPostReactions, creatReactions, disableReactions, deleteReactions,
   getAllUsers,
   readOneRecord, createOrUpdateStatsRecord,

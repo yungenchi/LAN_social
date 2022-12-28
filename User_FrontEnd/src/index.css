@@ -158,13 +158,11 @@ code {
 }
 
 .form {
-  padding: 30px;
-  margin-left: 166px;
   border: 1px solid gray;
   border-radius: 10px;
-  width: 800px;
   box-shadow: 5px 5px 5px grey;
   background-color: whitesmoke;
+  padding: 30px;
 }
 
 .postImage {

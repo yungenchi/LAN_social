@@ -80,9 +80,9 @@ export default function Register({
     <div>
       <h1 className="headerS">Update Info</h1>
       <hr />
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col-md-6">
-          <form onSubmit={handleSubmit} className="form">
+          <form onSubmit={handleSubmit} className="form m-1">
             <div className="form-group">
               <label htmlFor="username" className="control-label">Username</label>
               <input name="username" id="username" className="form-control"

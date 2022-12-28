@@ -16,7 +16,7 @@ const Comments = () => {
 
   const updateRootComments = async () => {
     const rootComments = await getRootPosts();
-    setRootComments(rootComments)
+    setRootComments(rootComments.reverse())
   } 
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const Comments = () => {
         <PostForm type="post" submitLabel="Post" addComment={addComment} handleCancel={()=>{setActiveComment(null)}}/>
       }
       <hr />
-      <h3 className="headerS">The Forum</h3>
+      <h3 className="text-center fw-bolder">The Forum</h3>
       <div className="comments-container">
         {rootComments.length>0 ?( rootComments.map((rootComment) => (
           <Comment

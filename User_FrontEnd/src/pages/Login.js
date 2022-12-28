@@ -50,6 +50,7 @@ export default function Login() {
 
   return (
     <div className="row">
+      <br/>
       <img className="img-fluid  col col-lg-6 p-0 m-0 d-none d-lg-block" src={officePic}/>
       <div className="col col-md-4 m-5">
         <h1>Login</h1>

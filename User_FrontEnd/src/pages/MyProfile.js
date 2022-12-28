@@ -103,26 +103,27 @@ function MyProfile() {
 
   return (
     <>
+    <br/>
     {!isEditing &&
         <>
-          <article class="profile">
-            <div class="content">
-              <img class="user-photo" src={userDefaultPhoto} alt="photo" />
-              <div class="user-meta">
-                <span class="first_name">{user.firstname} </span>
-                <span class="last_name">{user.lastname} </span>
+          <article className="profile ">
+            <div className="content">
+              <img className="user-photo" src={userDefaultPhoto} alt="photo" />
+              <div className="user-meta">
+                <span className="first_name">{user.firstname} </span>
+                <span className="last_name">{user.lastname} </span>
                 <div>
-                  <span class="username">{user.username}</span>
+                  <span className="username">{user.username}</span>
                 </div>
               </div>
-              <ul class="actions">
+              <ul className="actions">
                 <li>
-                  <button class="edit-btn" 
+                  <button className="edit-btn" 
                   onClick={()=>setIsEditing(true)}
                   > edit </button>
                 </li>
                 <li>
-                  <button class="delete-btn" onClick={handleShowAlert}> delete</button>
+                  <button className="delete-btn" onClick={handleShowAlert}> delete</button>
                 </li>
               </ul>
             </div>
