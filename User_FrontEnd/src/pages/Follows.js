@@ -93,7 +93,7 @@ export default function Follows() {
         event.preventDefault();
         console.log(event);
         const username = event.target.id
-        const followed = followingList.includes(username)
+        const followed = followingList.map((f)=>{return f.username}).includes(username)
         if (!followed) {
             await follow({ "username": username, "followedBy": user.username })
             console.log("follow");
