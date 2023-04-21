@@ -1,7 +1,7 @@
 module.exports = {
-  HOST: "rmit.australiaeast.cloudapp.azure.com",
-  USER: "s3864916",
-  PASSWORD: "0000",
-  DB: "s3864916",
+  HOST: "database-1.cjkkgufxuriv.us-east-1.rds.amazonaws.com",
+  USER: "admin",
+  PASSWORD: "00000000",
+  DB: "my_db",
   DIALECT: "mysql"
 };
